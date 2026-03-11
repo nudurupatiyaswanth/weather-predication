@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form Validation</title>
+
+<script>
+function validateForm() {
+    var username = document.getElementById("username").value;
+
+    var pattern = /^[a-zA-Z0-9]+$/;
+
+    if (username.length < 6) {
+        alert("Username must be at least 6 characters long");
+        return false;
+    }
+
+    if (!pattern.test(username)) {
+        alert("Username must contain only alphanumeric characters");
+        return false;
+    }
+
+    alert("Form submitted successfully");
+    return true;
+}
+</script>
+
+</head>
+
+<body>
+
+<h2>Username Validation Form</h2>
+
+<form onsubmit="return validateForm()">
+    Username: <input type="text" id="username"><br><br>
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
